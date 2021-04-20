@@ -1,70 +1,70 @@
-import React from "react";
-import { Switch, Route, Link } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { Switch, Route } from 'react-router-dom';
+import { isEmpty } from 'lodash';
 
-import Home from "./Home/Home.jsx";
-import Foo from "./Foo/Foo.jsx";
-import Bar from "./Bar/Bar.jsx";
-import Baz from "./Baz/Baz.jsx";
-import Error from "./Error/Error.jsx";
-
-// here is some external content. look at the /baz route below
-// to see how this content is passed down to the components via props
-const externalContent = {
-  id: "article-1",
-  title: "An Article",
-  author: "April Bingham",
-  text: "Some text in the article",
-};
+import AboutUs from './AboutUs/AboutUs';
+import BookItem from './BookItem/BookItem';
+import Contact from './Contact/Contact';
+import Category from './Category/Category';
+import Error from './Error/Error';
+import Nav from './Nav/Nav';
+import Footer from './Footer/Footer';
+import BookList from './BookList/BookList';
 
 function App() {
-  return (
-    <>
-      <header>
-        <nav>
-          <ul>
-            {/* these links should show you how to connect up a link to a specific route */}
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/foo">Foo</Link>
-            </li>
-            <li>
-              <Link to="/bar/hats/sombrero">Bar</Link>
-            </li>
-            <li>
-              <Link to="/baz">Baz</Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
-      {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/foo" exact component={Foo} />
-        {/* passing parameters via a route path */}
-        <Route
-          path="/bar/:categoryId/:productId"
-          exact
-          render={({ match }) => (
-            // getting the parameters from the url and passing
-            // down to the component as props
-            <Bar
-              categoryId={match.params.categoryId}
-              productId={match.params.productId}
-            />
-          )}
-        />
-        <Route
-          path="/baz"
-          exact
-          render={() => <Baz content={externalContent} />}
-        />
-        <Route component={Error} />
-      </Switch>
-    </>
-  );
+	const [ fetchedData, setFetchedData ] = useState();
+
+	useEffect(
+		() => {
+			const fetchData = async () => {
+				// performs a GET request
+				const response = await fetch('https://demo3400436.mockable.io/products');
+				const responseJson = await response.json();
+				setFetchedData(responseJson);
+			};
+
+			if (isEmpty(fetchedData)) {
+				fetchData();
+			}
+		},
+		[ fetchedData ]
+	);
+
+	return isEmpty(fetchedData) ? null : (
+		<div style={{ height: '100%' }}>
+			<header>
+				<Nav />
+			</header>
+			<Switch>
+				<Route path="/" exact>
+					<BookList books={Object.values(fetchedData)} />
+				</Route>
+				<Route path="/aboutUs" exact component={AboutUs} />
+				<Route path="/contact" exact component={Contact} />
+				<Route path="/category" exact component={Category} />
+				<Route
+					path="/:categoryId"
+					exact
+					render={({ match }) => {
+						const categoryId = match.params.categoryId;
+						const booksByCategory = Object.values(fetchedData).filter((book) => {
+							return book.categoryId === categoryId;
+						});
+						return fetchedData ? <BookList books={booksByCategory} /> : null;
+					}}
+				/>
+				<Route
+					path="/:categoryId/:productId"
+					exact
+					render={({ match }) => {
+						return fetchedData ? <BookItem book={fetchedData[match.params.productId]} /> : null;
+					}}
+				/>
+				<Route component={Error} />
+			</Switch>
+			<Footer />
+		</div>
+	);
 }
 
 export default App;
