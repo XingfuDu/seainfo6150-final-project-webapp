@@ -30,4 +30,9 @@
 
 .Danger {
 	color: #944317;
+	background-color: white;
+}
+
+.Danger:hover {
+	background-color: #fcd4cb;
 }

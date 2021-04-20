@@ -5,7 +5,6 @@ import styles from './BookListItem.module.css';
 import BookImage from '../BookImage/BookImage';
 
 const BookListItem = (props) => {
-	console.log(props);
 	return (
 		<li className={styles.container}>
 			<BookImage url={props.book.image} title={props.book.title} />

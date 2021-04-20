@@ -8,14 +8,12 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    box-sizing: border-box;
 }
 
  .wrapper {
     flex: 1;
- }
-
- .content {
-    flex: 1;
+    min-width: 50%;
     display: flex; 
     flex-direction: column;
     justify-content: flex-start;
@@ -24,7 +22,6 @@
 .link {
     margin: 0 0 20px;
     color: #3d5a80;
-    min-width: 50%;
     text-decoration: none;
 }
 

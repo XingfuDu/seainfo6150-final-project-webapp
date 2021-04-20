@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import HTMLText from '../HTMLText/HTMLText';
 import classes from './BookItem.module.css';
 import BookImage from '../BookImage/BookImage';
 import Button from '../Button/Button';
+import ContactData from '../ContactData/ContactData';
 import { Link } from 'react-router-dom';
 
 const BookItem = (props) => {
+	const [isFormShowing, setIsFormShowing] = useState(false);
+
+	function onClick() {
+	  setIsFormShowing(!isFormShowing);
+	}
 	return (
 		<div className={classes.container}>
 			<article className={classes.article}>
@@ -23,13 +29,13 @@ const BookItem = (props) => {
 							</Link>
 
 						</p>
-						<Button btnType="Success" clicked={props.checkoutContinued}>
+						<Button btnType="Success" clicked={onClick}>
 							Buy Now
 						</Button>
 					</div>
 				</div>
-
 				<HTMLText text={props.book.description} />
+				{isFormShowing? <ContactData/>: null}
 			</article>
 		</div>
 	);

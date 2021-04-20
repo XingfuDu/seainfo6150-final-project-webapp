@@ -6,6 +6,7 @@
 	padding: 0px;
 	display: flex;
 	align-items: center;
+	box-sizing: border-box;
 }
 
 .article {
@@ -35,6 +36,7 @@
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;
+	min-width: 50%;
 }
 
 .p,
@@ -45,7 +47,6 @@ h3, .time{
 .link {
     margin: 0 0 20px;
     color: #3d5a80;
-    min-width: 50%;
 }
 
 @media (max-width: 1000px) {
