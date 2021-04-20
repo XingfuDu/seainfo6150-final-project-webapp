@@ -1,0 +1,32 @@
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	background-color: #f2e9e4;
+	padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+.article {
+	min-height: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 150%;
+}
+
+.h3 {
+	color: #ee6c4d;
+}
+
+.p {
+	color: #3d5a80;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    padding-left: 50px;
+}

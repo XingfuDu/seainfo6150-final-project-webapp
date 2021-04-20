@@ -36,3 +36,8 @@
 .Danger:hover {
 	background-color: #fcd4cb;
 }
+
+.Button:disabled {
+	color: #ccc;
+	cursor: not-allowed;
+}

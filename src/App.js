@@ -10,6 +10,7 @@ import Error from './Error/Error';
 import Nav from './Nav/Nav';
 import Footer from './Footer/Footer';
 import BookList from './BookList/BookList';
+import OrderConfirmation from './OrderConfirmation/OrderConfirmation';
 
 function App() {
 	const [ fetchedData, setFetchedData ] = useState();
@@ -41,6 +42,7 @@ function App() {
 				</Route>
 				<Route path="/aboutUs" exact component={AboutUs} />
 				<Route path="/contact" exact component={Contact} />
+				<Route path="/orderConfirmation" exact component={OrderConfirmation} />
 				<Route path="/category" exact component={Category} />
 				<Route
 					path="/:categoryId"

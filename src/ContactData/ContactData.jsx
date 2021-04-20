@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import Button from '../Button/Button';
 import classes from './ContactData.module.css';
 import Input from './Input/Input';
+import { withRouter } from 'react-router-dom';
 
 class ContactData extends Component {
 	state = {
 		orderForm: {
-			name: {
+			Name: {
 				elementType: 'input',
 				elementConfig: {
 					type: 'text',
@@ -19,7 +20,7 @@ class ContactData extends Component {
 				valid: false,
 				touched: false
 			},
-			street: {
+			Street: {
 				elementType: 'input',
 				elementConfig: {
 					type: 'text',
@@ -32,7 +33,20 @@ class ContactData extends Component {
 				valid: false,
 				touched: false
 			},
-			zipCode: {
+			State: {
+				elementType: 'input',
+				elementConfig: {
+					type: 'text',
+					placeholder: 'State'
+				},
+				value: '',
+				validation: {
+					required: true
+				},
+				valid: false,
+				touched: false
+			},
+			ZipCode: {
 				elementType: 'input',
 				elementConfig: {
 					type: 'text',
@@ -47,20 +61,7 @@ class ContactData extends Component {
 				valid: false,
 				touched: false
 			},
-			country: {
-				elementType: 'input',
-				elementConfig: {
-					type: 'text',
-					placeholder: 'Country'
-				},
-				value: '',
-				validation: {
-					required: true
-				},
-				valid: false,
-				touched: false
-			},
-			email: {
+			Email: {
 				elementType: 'input',
 				elementConfig: {
 					type: 'text',
@@ -73,7 +74,7 @@ class ContactData extends Component {
 				valid: false,
 				touched: false
 			},
-			deliveryMethod: {
+			DeliveryMethod: {
 				elementType: 'select',
 				elementConfig: {
 					options: [
@@ -106,12 +107,23 @@ class ContactData extends Component {
 	}
 
 	orderHandler = (event) => {
-		event.preventDefault();
-		this.setState({ loading: true });
 		const formData = {};
 		for (let formElementIdentifier in this.state.orderForm) {
 			formData[formElementIdentifier] = this.state.orderForm[formElementIdentifier].value;
 		}
+		const queryParams = [];
+		for (let i in formData) {
+			queryParams.push(encodeURIComponent(i) + '=' + encodeURIComponent(formData[i]));
+		}
+		const queryString = queryParams.join('&');
+		this.props.history.push({
+			pathname: '/orderConfirmation',
+			search: queryString
+		});
+	};
+
+	cancelHandler = () => {
+		this.props.history.goBack();
 	};
 
 	inputChangedHandler = (event, inputIdentifier) => {
@@ -141,7 +153,7 @@ class ContactData extends Component {
 			});
 		}
 		let form = (
-			<form onSubmit={this.orderHandler}>
+			<form>
 				{formElementsArray.map((formElement) => {
 					return (
 						<Input
@@ -156,11 +168,11 @@ class ContactData extends Component {
 						/>
 					);
 				})}
-				<Button btnType="Success">
-					Order
-				</Button>
-                <Button btnType="Danger">
+				<Button clicked={this.cancelHandler}  btnType="Danger">
 					Cancel
+				</Button>
+				<Button clicked={this.orderHandler} btnType="Success">
+					Order
 				</Button>
 			</form>
 		);
@@ -173,4 +185,4 @@ class ContactData extends Component {
 	}
 }
 
-export default ContactData;
+export default withRouter(ContactData);
