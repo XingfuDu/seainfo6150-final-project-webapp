@@ -34,17 +34,22 @@ class ContactData extends Component {
 				touched: false
 			},
 			State: {
-				elementType: 'input',
+				elementType: 'select',
 				elementConfig: {
-					type: 'text',
-					placeholder: 'State'
+					options: [
+						{ value: 'WA', displayValue: 'WA' },
+						{ value: 'CA', displayValue: 'CA' },
+						{ value: 'TX', displayValue: 'TX' },
+						{ value: 'UT', displayValue: 'UT' },
+						{ value: 'VT', displayValue: 'VT' },
+						{ value: 'TN', displayValue: 'TN' },
+						{ value: 'VA', displayValue: 'VA' },
+						{ value: 'AL', displayValue: 'AL' }
+					]
 				},
-				value: '',
-				validation: {
-					required: true
-				},
-				valid: false,
-				touched: false
+				value: 'TN',
+				validation: {},
+				valid: true
 			},
 			ZipCode: {
 				elementType: 'input',
@@ -64,12 +69,13 @@ class ContactData extends Component {
 			Email: {
 				elementType: 'input',
 				elementConfig: {
-					type: 'text',
+					type: 'email',
 					placeholder: 'Your E-Mail'
 				},
 				value: '',
 				validation: {
-					required: true
+					required: true,
+					pattern: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 				},
 				valid: false,
 				touched: false
@@ -85,6 +91,17 @@ class ContactData extends Component {
 				value: 'fastest',
 				validation: {},
 				valid: true
+			},
+			ReceiveEmails: {
+				elementType: 'checkbox',
+				elementConfig: {
+					type: 'checkbox'
+				},
+				value: '',
+				validation: {},
+				valid: true,
+				label: 'ReceivePromotionalEmails',
+				labelContent: 'Receive Promotional Emails'
 			}
 		},
 		formIsValid: false
@@ -103,15 +120,21 @@ class ContactData extends Component {
 		if (rules.maxLength) {
 			isValid = value.length <= rules.maxLength && isValid;
 		}
+		if (rules.pattern) {
+			isValid = rules.pattern.test(value) && isValid;
+		}
 		return isValid;
 	}
 
-	orderHandler = (event) => {
+	orderHandler = () => {
 		const formData = {};
 		for (let formElementIdentifier in this.state.orderForm) {
 			formData[formElementIdentifier] = this.state.orderForm[formElementIdentifier].value;
 		}
 		const queryParams = [];
+		for (let i in this.props.book) {
+			queryParams.push(encodeURIComponent(i) + '=' + encodeURIComponent(this.props.book[i]));
+		}
 		for (let i in formData) {
 			queryParams.push(encodeURIComponent(i) + '=' + encodeURIComponent(formData[i]));
 		}
@@ -161,6 +184,8 @@ class ContactData extends Component {
 							elementType={formElement.config.elementType}
 							elementConfig={formElement.config.elementConfig}
 							value={formElement.config.value}
+							label={formElement.config.label}
+							labelContent={formElement.config.labelContent}
 							invalid={!formElement.config.valid}
 							shouldValidate={formElement.config.validation}
 							touched={formElement.config.touched}
@@ -168,10 +193,10 @@ class ContactData extends Component {
 						/>
 					);
 				})}
-				<Button clicked={this.cancelHandler}  btnType="Danger">
+				<Button clicked={this.cancelHandler} btnType="Danger">
 					Cancel
 				</Button>
-				<Button clicked={this.orderHandler} btnType="Success">
+				<Button clicked={this.orderHandler} disabled={!this.state.formIsValid} btnType="Success">
 					Order
 				</Button>
 			</form>

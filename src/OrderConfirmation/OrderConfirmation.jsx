@@ -7,7 +7,6 @@ const OrderConfirmation = (props) => {
 	for (let param of query.entries()) {
 		form.push(param[0]+':  '+param[1]);
 	}
-	console.log(form);
 	return (
 		<div className={classes.wrapper}>
 			<article className={classes.article}>

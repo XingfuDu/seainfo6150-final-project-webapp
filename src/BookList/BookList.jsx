@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './BookList.module.css';
+import classes from './BookList.module.css';
 import BookListItem from '../BookListItem/BookListItem';
 
 const BookList = (props) => {
@@ -8,12 +8,12 @@ const BookList = (props) => {
 
 	if (props.books.length) {
 		displayContent = (
-			<ul className={styles.container}>
+			<ul className={classes.container}>
 				{props.books.map((book) => <BookListItem book={book} key={book.id} />)}
 			</ul>
 		);
 	} else {
-		displayContent = <div className={styles.noData}>You have no data!</div>;
+		displayContent = <div className={classes.noData}>You have no data!</div>;
 	}
 
 	return displayContent;

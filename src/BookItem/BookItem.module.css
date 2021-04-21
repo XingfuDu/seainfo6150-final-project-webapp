@@ -2,7 +2,7 @@
 	background-color: #f2e9e4;
 	width: 100%;
 	min-height: 100%;
-	font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Lora', serif;
 	padding: 0px;
 	display: flex;
 	align-items: center;
@@ -12,7 +12,6 @@
 .article {
 	min-height: 100%;
 	margin-right: 0;
-	font-family: Arial, Helvetica, sans-serif;
 	font-size: 150%;
 	width: 50%;
 	padding-left: 25%;
@@ -32,11 +31,17 @@
 	flex: 1;
 	padding: 0px 50px 10px;
 	margin-top: 0;
+	margin-left: 0;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;
 	min-width: 50%;
+}
+
+.p{
+	margin-right: 0;
+	padding-right: 0;
 }
 
 .p,
@@ -45,11 +50,21 @@ h3, .time{
 }
 
 .link {
-    margin: 0 0 20px;
     color: #3d5a80;
 }
 
-@media (max-width: 1000px) {
+.Input {
+    width: 30%;
+	margin-left: 10px;
+    box-sizing: border-box;
+    outline: none;
+    border: 1px solid #ccc;
+    background-color: white;
+    font: inherit;
+    padding: 6px 10px;
+}
+
+@media (max-width: 1300px) {
 	.content {
 		display: flex;
 		flex-direction: row;

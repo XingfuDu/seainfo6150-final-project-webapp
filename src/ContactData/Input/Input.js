@@ -43,6 +43,17 @@ const input = (props) => {
 				</select>
 			);
 			break;
+		case 'checkbox':
+			inputElement = (
+					<input
+						className={classes.CheckBox}
+						{...props.elementConfig}
+						value={props.value}
+						onChange={props.changed}
+						id={props.label}
+					/>
+			);
+			break;			
 		default:
 			inputElement = (
 				<input
@@ -55,7 +66,7 @@ const input = (props) => {
 	}
 	return (
 		<div className={classes.Input}>
-			<label className={classes.Label}>{props.label}</label>
+			<label for={props.label} className={classes.Label}>{props.labelContent}</label>
 			{inputElement}
             {validationError}
 		</div>

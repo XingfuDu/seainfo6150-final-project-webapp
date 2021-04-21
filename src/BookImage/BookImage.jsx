@@ -1,13 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styles from "./BookImage.module.css";
+import classes from "./BookImage.module.css";
 
-const ArticleImage = (props) => {
-  return <img className={styles.image} alt={props.title} src={props.url} />;
+const BookImage = (props) => {
+  return <img className={classes.image} alt={props.title} src={props.url} />;
 };
 
-ArticleImage.propTypes = {
+BookImage.propTypes = {
   title: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
 };
-export default ArticleImage;
+export default BookImage;

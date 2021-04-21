@@ -40,12 +40,15 @@ function App() {
 				<Route path="/" exact>
 					<BookList books={Object.values(fetchedData)} />
 				</Route>
+				<Route path="/home" exact>
+					<BookList books={Object.values(fetchedData)} />
+				</Route>
 				<Route path="/aboutUs" exact component={AboutUs} />
 				<Route path="/contact" exact component={Contact} />
 				<Route path="/orderConfirmation" exact component={OrderConfirmation} />
 				<Route path="/category" exact component={Category} />
 				<Route
-					path="/:categoryId"
+					path="/book/:categoryId"
 					exact
 					render={({ match }) => {
 						const categoryId = match.params.categoryId;
@@ -56,7 +59,7 @@ function App() {
 					}}
 				/>
 				<Route
-					path="/:categoryId/:productId"
+					path="/book/:categoryId/:productId"
 					exact
 					render={({ match }) => {
 						return fetchedData ? <BookItem book={fetchedData[match.params.productId]} /> : null;
