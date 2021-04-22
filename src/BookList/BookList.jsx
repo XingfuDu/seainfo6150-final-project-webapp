@@ -45,7 +45,6 @@ const BookList = (props) => {
 								</tr>
 							</tbody>
 						</table>
-						<div class="clear" />
 					</div>
 				</div>
 				<ul className={classes.container}>

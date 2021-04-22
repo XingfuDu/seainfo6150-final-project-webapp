@@ -8,6 +8,17 @@ exports[`BookItem tests renders correctly 1`] = `
     <article
       class="article"
     >
+      <a
+        href="https://www.amazon.com/b?node=23430543011&ref_=apubna_pr_gr_12002_nd_ml_at_2104"
+      >
+        <img
+          alt="ads"
+          class="ads"
+          sizes=" (max-width: 400px) 400px,  (max-width: 1000px) 700px,  (max-width: 1200px) 900px,  900px "
+          src="ads900.jpg"
+          srcset="ads400.jpg 400px, ads700.jpg 700px, ads900.jpg 900px"
+        />
+      </a>
       <div
         class="content"
       >
@@ -54,7 +65,7 @@ exports[`BookItem tests renders correctly 1`] = `
               12.99
               $   Quantity:
               <input
-                class="Input"
+                class="input"
                 min="1"
                 type="number"
               />

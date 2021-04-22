@@ -40,7 +40,7 @@ const BookItem = (props) => {
 			<article className={classes.article}>
 				<a href="https://www.amazon.com/b?node=23430543011&ref_=apubna_pr_gr_12002_nd_ml_at_2104">
 					<img className={classes.ads}
-						srcset={`${ads400} 400px, ${ads700} 700px, ${ads900} 900px`}
+						srcSet={`${ads400} 400px, ${ads700} 700px, ${ads900} 900px`}
 						sizes="
 								(max-width: 400px) 400px, 
 								(max-width: 1000px) 700px, 
