@@ -5,14 +5,17 @@ import BookImage from '../BookImage/BookImage';
 import Button from '../Button/Button';
 import ContactData from '../ContactData/ContactData';
 import { Link } from 'react-router-dom';
+import ads900 from '../Image/ads900.jpg';
+import ads700 from '../Image/ads700.jpg';
+import ads400 from '../Image/ads400.jpg';
 
 const BookItem = (props) => {
 	const [ isFormShowing, setIsFormShowing ] = useState(false);
-	const [BookState, setBookState] = useState({
+	const [ BookState, setBookState ] = useState({
 		Book: props.book.title,
 		Quantity: 1,
 		TotalPrice: props.book.price + '$'
-	  });
+	});
 
 	function onClick() {
 		setIsFormShowing(!isFormShowing);
@@ -25,16 +28,29 @@ const BookItem = (props) => {
 		</div>
 	);
 	const QuantityChangedHandler = (event) => {
-		const TotalPrice = props.book.price * event.target.value; 
-		setBookState( {
+		const TotalPrice = props.book.price * event.target.value;
+		setBookState({
 			Book: props.book.title,
 			Quantity: event.target.value,
 			TotalPrice: TotalPrice + '$'
-		} )
-	}
+		});
+	};
 	return (
 		<div className={classes.container}>
 			<article className={classes.article}>
+				<a href="https://www.amazon.com/b?node=23430543011&ref_=apubna_pr_gr_12002_nd_ml_at_2104">
+					<img className={classes.ads}
+						srcset={`${ads400} 400px, ${ads700} 700px, ${ads900} 900px`}
+						sizes="
+								(max-width: 400px) 400px, 
+								(max-width: 1000px) 700px, 
+								(max-width: 1200px) 900px, 
+								900px
+							"
+						src={ads900}
+						alt="ads"
+					/>
+				</a>
 				<div className={classes.content}>
 					<BookImage url={props.book.image} title={props.book.title} />
 					<div className={classes.wrapper}>
@@ -51,7 +67,12 @@ const BookItem = (props) => {
 						<div className={classes.price}>
 							<p className={classes.p}>
 								Price: &nbsp; {props.book.price}&#36; &nbsp; Quantity:
-								<input className={classes.Input} type="number" min="1" onChange={QuantityChangedHandler} />
+								<input
+									className={classes.input}
+									type="number"
+									min="1"
+									onChange={QuantityChangedHandler}
+								/>
 							</p>
 						</div>
 						<Button btnType="Success" clicked={onClick}>
@@ -60,7 +81,7 @@ const BookItem = (props) => {
 					</div>
 				</div>
 				{isFormShowing ? null : description}
-				{isFormShowing ? <ContactData book={BookState}/> : null}
+				{isFormShowing ? <ContactData book={BookState} /> : null}
 			</article>
 		</div>
 	);
