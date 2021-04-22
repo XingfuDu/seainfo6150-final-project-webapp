@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BookImage tests renders correctly 1`] = `
+<div>
+  <img
+    alt="Some We Love, Some We Hate, Some We Eat: Why It's So Hard to Think Straight About Animals"
+    class="image"
+    src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1369453733l/6953508.jpg"
+  />
+</div>
+`;

@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OrderConfirmation tests renders correctly 1`] = `
+<div>
+  <div
+    class="wrapper"
+  >
+    <article
+      class="article"
+    >
+      <h3
+        class="h3"
+      >
+        Hello,
+      </h3>
+      <p
+        class="p"
+      >
+        Thank you for shopping with us! Your order details are indicated below.
+      </p>
+      <div
+        class="form"
+      >
+        <p
+          class="p"
+        >
+          Book:  Remember: The Science of Memory and the Art of Forgetting
+        </p>
+        <p
+          class="p"
+        >
+          Quantity:  1
+        </p>
+        <p
+          class="p"
+        >
+          TotalPrice:  13.52$
+        </p>
+        <p
+          class="p"
+        >
+          Name:  Xingfu Du
+        </p>
+        <p
+          class="p"
+        >
+          Street:  3100 Lake Brook Boulevard
+        </p>
+        <p
+          class="p"
+        >
+          State:  TN
+        </p>
+        <p
+          class="p"
+        >
+          ZipCode:  37909
+        </p>
+        <p
+          class="p"
+        >
+          Email:  xdu5@vols.utk.edu
+        </p>
+        <p
+          class="p"
+        >
+          DeliveryMethod:  fastest
+        </p>
+        <p
+          class="p"
+        >
+          ReceiveEmails:  
+        </p>
+      </div>
+    </article>
+  </div>
+</div>
+`;

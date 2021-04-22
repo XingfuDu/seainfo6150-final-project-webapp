@@ -92,12 +92,27 @@ class ContactData extends Component {
 				validation: {},
 				valid: true
 			},
+			FavoriteGenre: {
+				elementType: 'radio',
+				elementConfig: {
+					type: 'radio'
+				},
+				validation: {},
+				valid: true,
+				name: 'FavoriteGenre',
+				labelContent: 'What is your favorite genre?',
+				labelText: [
+					'Biography',
+					'Art',
+					'Business'
+				]
+			},
 			ReceiveEmails: {
 				elementType: 'checkbox',
 				elementConfig: {
 					type: 'checkbox'
 				},
-				value: '',
+				value: 'Yes',
 				validation: {},
 				valid: true,
 				label: 'ReceivePromotionalEmails',
@@ -184,8 +199,10 @@ class ContactData extends Component {
 							elementType={formElement.config.elementType}
 							elementConfig={formElement.config.elementConfig}
 							value={formElement.config.value}
+							name={formElement.config.name}
 							label={formElement.config.label}
 							labelContent={formElement.config.labelContent}
+							labelText={formElement.config.labelText}
 							invalid={!formElement.config.valid}
 							shouldValidate={formElement.config.validation}
 							touched={formElement.config.touched}

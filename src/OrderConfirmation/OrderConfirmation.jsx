@@ -13,7 +13,7 @@ const OrderConfirmation = (props) => {
 				<h3 className={classes.h3}>Hello,</h3>
 				<p className={classes.p}>Thank you for shopping with us! Your order details are indicated below.</p>
                 <div className={classes.form}>
-                    {form.map(data=><p className={classes.p}>{data}</p>)}
+                    {form.map((data,index)=><p className={classes.p} key={index}>{data}</p>)}
                 </div>
 			</article>
 		</div>

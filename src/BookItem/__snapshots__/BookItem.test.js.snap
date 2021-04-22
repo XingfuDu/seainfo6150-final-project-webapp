@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BookItem tests renders correctly 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <article
+      class="article"
+    >
+      <div
+        class="content"
+      >
+        <img
+          alt="Some We Love, Some We Hate, Some We Eat: Why It's So Hard to Think Straight About Animals"
+          class="image"
+          src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1369453733l/6953508.jpg"
+        />
+        <div
+          class="wrapper"
+        >
+          <h3
+            class="h3"
+          >
+            Some We Love, Some We Hate, Some We Eat: Why It's So Hard to Think Straight About Animals
+          </h3>
+          <time
+            class="time"
+            datetime="2018-11-22T17:55:57.000Z"
+          >
+            November 22nd 2018, 9:55 am
+          </time>
+          <p
+            class="p"
+          >
+            By 
+            Hal Herzog
+                Category:
+             
+            <a
+              class="link"
+              href="/book/1"
+            >
+              Psychology
+            </a>
+          </p>
+          <div
+            class="price"
+          >
+            <p
+              class="p"
+            >
+              Price:   
+              12.99
+              $   Quantity:
+              <input
+                class="Input"
+                min="1"
+                type="number"
+              />
+            </p>
+          </div>
+          <button
+            class="Button Success"
+          >
+            Buy Now
+          </button>
+        </div>
+      </div>
+      <div>
+        <h3
+          class="h3"
+        >
+          Overview:
+        </h3>
+        <div
+          class="description"
+        >
+          <p>
+            Combining the intellect of Malcolm Gladwell with the irreverent humor of Mary Roach and the paradigm-shifting analysis of Jared Diamond, a leading social scientist offers an unprecedented look inside our complex and often paradoxical relationships with animals.
+          </p>
+          <p>
+            Does living with a pet really make people happier and healthier? What can we learn from biomedical research with mice? Who enjoyed a better quality of life—the chicken on a dinner plate or the rooster who died in a Saturday-night cockfight? Why is it wrong to eat the family dog? Drawing on more than two decades of research in the emerging field of anthrozoology, the science of human–animal relations, Hal Herzog offers surprising answers to these and other questions related to the moral conundrums we face day in and day out regarding the creatures with whom we share our world.
+          </p>
+          <p>
+            Some We Love, Some We Hate, Some We Eat is a highly entertaining and illuminating journey through the full spectrum of human–animal relations, based on Dr. Herzog’s groundbreaking research on animal rights activists, cockfighters, professional dog-show handlers, veterinary students, and biomedical researchers. Blending anthropology, behavioral economics, evolutionary psychology, and philosophy, Herzog carefully crafts a seamless narrative enriched with real-life anecdotes, scientific research, and his own sense of moral ambivalence.
+          </p>
+          <p>
+            Alternately poignant, challenging, and laugh-out-loud funny, this enlightening and provocative book will forever change the way we look at our relationships with other creatures and, ultimately, how we see ourselves.
+          </p>
+        </div>
+      </div>
+    </article>
+  </div>
+</div>
+`;

@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer tests renders correctly 1`] = `
+<div>
+  <footer
+    class="footer"
+  >
+    <ul
+      class="ul"
+    >
+      <li
+        class="li"
+      >
+        <p
+          class="p"
+        >
+          Conditions of Use
+        </p>
+      </li>
+      <li
+        class="li"
+      >
+        <p
+          class="p"
+        >
+          Privacy Notice
+        </p>
+      </li>
+      <li
+        class="li"
+      >
+        <p
+          class="p"
+        >
+          © 1990-2021, Book Store Inc
+        </p>
+      </li>
+    </ul>
+  </footer>
+</div>
+`;

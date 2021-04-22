@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BookList tests renders correctly 1`] = `
+<div>
+  <ul
+    class="container"
+  >
+    <li
+      class="container"
+    >
+      <img
+        alt="Some We Love, Some We Hate, Some We Eat: Why It's So Hard to Think Straight About Animals"
+        class="image"
+        src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1369453733l/6953508.jpg"
+      />
+      <div
+        class="wrapper"
+      >
+        <h3>
+          <a
+            class="link"
+            href="/book/1/0"
+          >
+            Some We Love, Some We Hate, Some We Eat: Why It's So Hard to Think Straight About Animals
+          </a>
+        </h3>
+        <time
+          class="time"
+          datetime="2018-11-22T17:55:57.000Z"
+        >
+          November 22nd 2018, 9:55 am
+        </time>
+        <p
+          class="author"
+        >
+          By 
+          Hal Herzog
+        </p>
+      </div>
+    </li>
+    <li
+      class="container"
+    >
+      <img
+        alt="Remember: The Science of Memory and the Art of Forgetting"
+        class="image"
+        src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1598831596l/54895704.jpg"
+      />
+      <div
+        class="wrapper"
+      >
+        <h3>
+          <a
+            class="link"
+            href="/book/1/1"
+          >
+            Remember: The Science of Memory and the Art of Forgetting
+          </a>
+        </h3>
+        <time
+          class="time"
+          datetime="2018-11-22T15:12:24.000Z"
+        >
+          November 22nd 2018, 7:12 am
+        </time>
+        <p
+          class="author"
+        >
+          By 
+          Lisa Genova
+        </p>
+      </div>
+    </li>
+  </ul>
+</div>
+`;

@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav tests renders correctly 1`] = `
+<div>
+  <nav
+    class="navBar"
+  >
+    <ul
+      class="ul"
+    >
+      <li
+        class="li"
+      >
+        <div
+          class="wrapper"
+        >
+          <img
+            alt=""
+            class="logo"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEbIOIbjScifPvLGXY2gwa22xCLe780nRyYQ&usqp=CAUß"
+          />
+          <a
+            class="link"
+            href="/home"
+          >
+            Book Store
+          </a>
+        </div>
+      </li>
+      <li
+        class="li"
+      >
+        <a
+          class="link"
+          href="/category"
+        >
+          Category
+        </a>
+      </li>
+      <li
+        class="li"
+      >
+        <a
+          class="link"
+          href="/aboutUs"
+        >
+          About Us
+        </a>
+      </li>
+      <li
+        class="li"
+      >
+        <a
+          class="link"
+          href="/contact"
+        >
+          Contact
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;

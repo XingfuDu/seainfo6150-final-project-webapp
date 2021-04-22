@@ -8,8 +8,10 @@ import { Link } from 'react-router-dom';
 
 const BookItem = (props) => {
 	const [ isFormShowing, setIsFormShowing ] = useState(false);
-	const [QuantityState, setQuantityState] = useState({
-		Quantity: 1
+	const [BookState, setBookState] = useState({
+		Book: props.book.title,
+		Quantity: 1,
+		TotalPrice: props.book.price + '$'
 	  });
 
 	function onClick() {
@@ -23,8 +25,11 @@ const BookItem = (props) => {
 		</div>
 	);
 	const QuantityChangedHandler = (event) => {
-		setQuantityState( {
-			Quantity: event.target.value
+		const TotalPrice = props.book.price * event.target.value; 
+		setBookState( {
+			Book: props.book.title,
+			Quantity: event.target.value,
+			TotalPrice: TotalPrice + '$'
 		} )
 	}
 	return (
@@ -55,7 +60,7 @@ const BookItem = (props) => {
 					</div>
 				</div>
 				{isFormShowing ? null : description}
-				{isFormShowing ? <ContactData book={QuantityState}/> : null}
+				{isFormShowing ? <ContactData book={BookState}/> : null}
 			</article>
 		</div>
 	);

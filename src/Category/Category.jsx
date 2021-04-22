@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './Category.module.css';
 import { Link } from 'react-router-dom';
 
-const AboutUs = () => {
+const Category = () => {
 	return (
 		<div className={classes.wrapper}>
 			<main className={classes.main}>
@@ -43,4 +43,4 @@ const AboutUs = () => {
 	);
 };
 
-export default AboutUs;
+export default Category;
